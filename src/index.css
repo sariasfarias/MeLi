@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "ProximaNovaRegular";   /*Can be any text*/
+  src: local("ProximaNovaRegular"),
+    url("./fonts/ProximaNovaRegular.ttf") format("truetype");
+}
+
+body {
+  margin: 0;
+  font-family: ProximaNovaRegular;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
