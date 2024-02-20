@@ -1,6 +1,16 @@
 @import '../../styles/constants.scss';
 
 .header{
+    display: flex;
+    align-items: center;
     background-color: $yellow;
-    padding: 10px;
+    padding:   5px $padding-1;
+
+    @media (min-width: 680px) {
+        padding:  $padding-1 $padding-2;
+    }
+
+    &_logo{
+        padding-right: 8px;
+    }
 }
