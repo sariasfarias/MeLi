@@ -1,10 +1,10 @@
-import { SearchBar } from '../SearchBar/SearchBar';
+import { Header } from '../Header/Header';
 import './MainContainer.scss';
 
 export function MainContainer () {
     return (
     <div className='main-container'> 
-        <SearchBar/>
+        <Header/>
     </div>
     );
 }

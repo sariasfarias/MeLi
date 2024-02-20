@@ -1,13 +1,18 @@
-@import '../../styles/colors.scss';
+@import '../../styles/constants.scss';
 .search-bar{
     display: flex;
+    width: -webkit-fill-available;
     &_input{
         width: -webkit-fill-available;
         color: $grey-medium;
         border-color: transparent;
+        border-radius: 4px 0px 0px 4px;
+        height: $padding-2;
+        font-size: $font-size-3;
     }
     &_button{
         background-color: $grey-light;
+        border-radius: 0px 4px 4px 0px;
         border-color: transparent;
     }
 }
