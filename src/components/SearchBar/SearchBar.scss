@@ -1,0 +1,13 @@
+@import '../../styles/colors.scss';
+.search-bar{
+    display: flex;
+    &_input{
+        width: -webkit-fill-available;
+        color: $grey-medium;
+        border-color: transparent;
+    }
+    &_button{
+        background-color: $grey-light;
+        border-color: transparent;
+    }
+}
