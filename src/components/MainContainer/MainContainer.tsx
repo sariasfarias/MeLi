@@ -1,3 +1,5 @@
+import './MainContainer.scss';
+
 export function MainContainer () {
-    return <> Main Container</>
+    return <div className='main-container'> Main Container</div>
 }
