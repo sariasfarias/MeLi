@@ -1,10 +1,12 @@
-@import '../../styles/colors.scss';
+@import '../../styles/constants.scss';
 .search-bar{
     display: flex;
     &_input{
         width: -webkit-fill-available;
         color: $grey-medium;
         border-color: transparent;
+        height: 32px;
+        font-size: 14px;
     }
     &_button{
         background-color: $grey-light;
