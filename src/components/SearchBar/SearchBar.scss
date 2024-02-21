@@ -3,12 +3,16 @@
     display: flex;
     width: -webkit-fill-available;
     &_input{
+        text-indent: 10px;
         width: -webkit-fill-available;
-        color: $grey-medium;
+        color: $black;
         border-color: transparent;
         border-radius: 4px 0px 0px 4px;
         height: $padding-2;
         font-size: $font-size-3;
+        &::placeholder {
+            color: $grey-medium;
+        }
     }
     &_button{
         background-color: $grey-light;
