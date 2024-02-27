@@ -1,10 +1,8 @@
 import { SearchBar } from '../SearchBar/SearchBar';
 import './Header.scss';
 import meLiLogo from '../../assets/images/MeLiLogo.png';
+import { IHeader } from '../../types';
 
-interface IHeader{
-    isAuth: boolean;
-}
 
 export function Header( {isAuth} : IHeader){
     return (
