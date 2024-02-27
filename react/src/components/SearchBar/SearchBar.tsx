@@ -19,7 +19,7 @@ export function SearchBar(){
     }
 
     return (
-        <div className="search-bar">
+        <div className="search-bar" data-testid="search-bar">
             <input 
                 className="search-bar_input"
                 type="text"
