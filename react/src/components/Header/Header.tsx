@@ -5,6 +5,7 @@ import { IHeader } from '../../types';
 
 
 export function Header( {isAuth} : IHeader){
+    
     return (
         <div className='header'>
             <div className='header_logo'>

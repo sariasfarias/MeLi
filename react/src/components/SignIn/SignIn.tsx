@@ -3,7 +3,6 @@ import { registerNewUser } from "../../api/User";
 import { IForm } from "../../types";
 import { BasicForm } from "../Form/Form";
 import './SignIn.scss';
-import { LogInURL } from "../../constants";
 
 export const SignIn = () => {
     const [error, setError] = useState(false);

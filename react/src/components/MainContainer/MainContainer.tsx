@@ -4,6 +4,7 @@ import './MainContainer.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { SignIn } from '../SignIn/SignIn';
 import { LogIn } from '../LogIn/LogIn';
+import { Home } from '../Home/Home';
 
 export function MainContainer () {
     const [isAuth, setIsAuth] = useState(false);
@@ -20,7 +21,7 @@ export function MainContainer () {
             <BrowserRouter>
                 <Header isAuth={isAuth}/>
             <Routes>
-                <Route path="/" element={null}/>
+                <Route path="/" element={<Home isAuth={isAuth} />}/>
                 <Route path="/sing-in" element={<SignIn/>}/>
                 <Route path="/log-in" element={<LogIn/>}/>
             </Routes>
