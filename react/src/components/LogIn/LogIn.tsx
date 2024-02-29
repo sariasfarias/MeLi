@@ -12,7 +12,7 @@ export const LogIn = () => {
 
     return (
         <div className="log-in">
-            <h2>Registro</h2>
+            <h2>Ingreso</h2>
             <BasicForm 
                 formFunction={onSubmit} 
                 name={""} 
