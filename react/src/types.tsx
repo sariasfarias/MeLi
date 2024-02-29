@@ -9,6 +9,11 @@ export interface IForm {
     password: string;
 }
 
+export interface ILogIn {
+    email: string;
+    password: string;
+}
+
 export interface IBasicForm {
     name: string;
     lastName: string;
