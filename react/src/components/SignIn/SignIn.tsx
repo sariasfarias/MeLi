@@ -1,11 +1,13 @@
+import { useState } from "react";
+import { registerNewUser } from "../../api/User";
 import { IForm } from "../../types";
 import { BasicForm } from "../Form/Form";
 import './SignIn.scss';
 
 export const SignIn = () => {
-
+    const [error, setError] = useState(false);
     const onSubmit = (user : IForm) => {
-        //console.log("xxxxxxxx", user)
+        registerNewUser(user, setError);
     }
 
     return (
@@ -19,6 +21,7 @@ export const SignIn = () => {
                 email={""} 
                 password={""}
             />
+            {error ? <h1>Oops! Intenta otra vez </h1> : null}
         </div>
     );
     

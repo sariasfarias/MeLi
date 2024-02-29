@@ -7,7 +7,7 @@ export const BasicForm = (props: IBasicForm) => {
     const onSubmit = ({name, lastName, email, password, formFunction} : IBasicForm) => {
         const user = {
             name: name,
-            lastName: lastName,
+            lastname: lastName,
             email: email,
             password: password,
         };
