@@ -55,8 +55,7 @@ describe('BasicForm ', () => {
         fireEvent.change(nameInput, { target: { value: 'Marcos' } });
         fireEvent.change(lastNameInput, { target: { value: 'Garcia' } });
         fireEvent.change(emailInput, { target: { value: 'marcos.garcia@example.com' } });
-        fireEvent.change(passwordInput, { target: { value: 'qwerty123' } });
-      
+        
         fireEvent.click(submitButton);
       
         await waitFor(() => expect(formFunction).toHaveBeenCalledWith({
@@ -103,7 +102,6 @@ describe('BasicForm ', () => {
         const submitButton = screen.getByText('Guardar');
       
         fireEvent.change(emailInput, { target: { value: 'marcos.garcia@example.com' } });
-        fireEvent.change(passwordInput, { target: { value: 'qwerty123' } });
       
         fireEvent.click(submitButton);
       
