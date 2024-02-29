@@ -11,7 +11,7 @@ export const LogIn = () => {
     }
 
     return (
-        <div className="log-in">
+        <div className="log-in" data-testid="log-in">
             <h2>Ingreso</h2>
             <BasicForm 
                 formFunction={onSubmit} 

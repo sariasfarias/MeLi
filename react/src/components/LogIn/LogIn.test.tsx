@@ -4,7 +4,7 @@ import { LogIn } from './LogIn';
 
 test('renders LogIn component', () => {
   render(<LogIn />);
-  const headingElement = screen.getByText('Registro');
+  const headingElement = screen.getByText('Ingreso');
   expect(headingElement).toBeInTheDocument();
 
   const emailInputElement = screen.getByPlaceholderText('juan.paredes@mail.com');
