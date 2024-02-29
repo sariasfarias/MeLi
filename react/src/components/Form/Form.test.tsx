@@ -8,7 +8,7 @@ const formFunction = jest.fn();
 describe('BasicForm ', () => {
     beforeEach(() => { jest.clearAllMocks()});
       
-    it('render component when there is not Register User', async () => {
+    it('render component when user wants to Sign up', async () => {
         
         render(
           <BasicForm 
@@ -21,10 +21,10 @@ describe('BasicForm ', () => {
           />
         );
       
-        const nameInput = screen.getByPlaceholderText('Juan');
-        const lastNameInput = screen.getByPlaceholderText('Paredes');
-        const emailInput = screen.getByPlaceholderText('juan.paredes@mail.com');
-        const passwordInput = screen.queryByPlaceholderText('12345678');
+        const nameInput = screen.getByTestId('form-name');
+        const lastNameInput = screen.getByTestId('form-lastname');
+        const emailInput = screen.getByTestId('form-email');
+        const passwordInput = screen.getByTestId('form-password');
         const submitButton = screen.getByText('Guardar');
       
         expect(nameInput).toBeInTheDocument();
@@ -33,7 +33,7 @@ describe('BasicForm ', () => {
         expect(passwordInput).toBeInTheDocument();
         expect(submitButton).toBeInTheDocument();
     });
-    it('call the arg function when there is not Register User', async () => {
+    it('call the arg function when user wants to Sign up', async () => {
         
         render(
           <BasicForm 
@@ -46,26 +46,27 @@ describe('BasicForm ', () => {
           />
         );
       
-        const nameInput = screen.getByPlaceholderText('Juan');
-        const lastNameInput = screen.getByPlaceholderText('Paredes');
-        const emailInput = screen.getByPlaceholderText('juan.paredes@mail.com');
-        const passwordInput = screen.queryByPlaceholderText('12345678');
+        const nameInput = screen.getByTestId('form-name');
+        const lastNameInput = screen.getByTestId('form-lastname');
+        const emailInput = screen.getByTestId('form-email');
+        const passwordInput = screen.getByTestId('form-password');
         const submitButton = screen.getByText('Guardar');
       
         fireEvent.change(nameInput, { target: { value: 'Marcos' } });
         fireEvent.change(lastNameInput, { target: { value: 'Garcia' } });
         fireEvent.change(emailInput, { target: { value: 'marcos.garcia@example.com' } });
+        fireEvent.change(passwordInput, { target: { value: 'qwerty123' } });
         
         fireEvent.click(submitButton);
       
         await waitFor(() => expect(formFunction).toHaveBeenCalledWith({
             name: 'Marcos',
-            lastName: 'Garcia',
+            lastname: 'Garcia',
             email: 'marcos.garcia@example.com',
             password: 'qwerty123',
         }));
     });
-    it('render component when there is Register User', async () => {
+    it('render component when user wants to LogIn', async () => {
         
         render(
           <BasicForm 
@@ -77,15 +78,19 @@ describe('BasicForm ', () => {
           />
         );
       
-        const emailInput = screen.getByPlaceholderText('juan.paredes@mail.com');
-        const passwordInput = screen.queryByPlaceholderText('12345678');
+        const nameInput = screen.queryByTestId('form-name');
+        const lastNameInput = screen.queryByTestId('form-lastname');
+        const emailInput = screen.getByTestId('form-email');
+        const passwordInput = screen.getByTestId('form-password');
         const submitButton = screen.getByText('Guardar');
       
+        expect(nameInput).toBeNull();
+        expect(lastNameInput).toBeNull();
         expect(emailInput).toBeInTheDocument();
         expect(passwordInput).toBeInTheDocument();
         expect(submitButton).toBeInTheDocument();
     });
-    it('call the arg function when there is Register User', async () => {
+    it('call the arg function when user wants to LogIn', async () => {
         
         render(
           <BasicForm 
@@ -97,17 +102,16 @@ describe('BasicForm ', () => {
           />
         );
       
-        const emailInput = screen.getByPlaceholderText('juan.paredes@mail.com');
-        const passwordInput = screen.queryByPlaceholderText('12345678');
+        const emailInput = screen.getByTestId('form-email');
+        const passwordInput = screen.getByTestId('form-password');
         const submitButton = screen.getByText('Guardar');
       
         fireEvent.change(emailInput, { target: { value: 'marcos.garcia@example.com' } });
+        fireEvent.change(passwordInput, { target: { value: 'qwerty123' } });
       
         fireEvent.click(submitButton);
       
         await waitFor(() => expect(formFunction).toHaveBeenCalledWith({
-            name: '',
-            lastName: '',
             email: 'marcos.garcia@example.com',
             password: 'qwerty123',
         }));

@@ -1,28 +1,26 @@
 import { useState } from "react";
-import { registerNewUser } from "../../api/User";
+import { LogInUser } from "../../api/User";
 import { IForm } from "../../types";
 import { BasicForm } from "../Form/Form";
-import './SignIn.scss';
-import { LogInURL } from "../../constants";
+import './LogIn.scss';
 
-export const SignIn = () => {
+export const LogIn = () => {
     const [error, setError] = useState(false);
     const onSubmit = (user : IForm) => {
-        registerNewUser(user, setError);
+        LogInUser(user, setError);
     }
 
     return (
-        <div className="sign-in">
-            <h2>Registro</h2>
+        <div className="log-in">
+            <h2>Ingreso</h2>
             <BasicForm 
-                isRegisterUser={false} 
                 formFunction={onSubmit} 
                 name={""} 
                 lastName={""} 
                 email={""} 
                 password={""}
             />
-            <a href={"/log-in"}>Tienes una cuenta? Ingresa</a>
+            <a href={"/sign-in"}>No tienes una cuenta? Registrate</a>
             {error ? <h1>Oops! Intenta otra vez </h1> : null}
         </div>
     );
