@@ -37,7 +37,7 @@ export const BasicForm = (props: IBasicForm) => {
                 <label htmlFor="password" className="basic-form_label">Contraseña</label>
                 <Field name="password" type="password" placeholder="12345678" className="basic-form_input" data-testid="form-password"/>
 
-                <button type="submit" className="basic-form_button">Guardar</button>
+                <button type="submit" className="basic-form_button">Enviar</button>
                 </Form>
         </Formik>
     );

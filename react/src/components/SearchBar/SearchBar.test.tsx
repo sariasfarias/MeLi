@@ -1,10 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import { SearchBar } from './SearchBar';
 
+const setData = jest.fn();
+
 describe('SearchBar', () => {
   it('renders the component', () => {
     render(
-      <SearchBar/>
+      <SearchBar setData={setData}/>
     );
 
     const inputElement = screen.getByPlaceholderText('Nunca dejes de buscar');
@@ -16,7 +18,7 @@ describe('SearchBar', () => {
 
   it('should call api', () => {
     render(
-      <SearchBar/>
+      <SearchBar setData={setData}/>
     );
     //cal api test
   });

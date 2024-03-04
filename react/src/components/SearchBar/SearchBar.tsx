@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import './SearchBar.scss';
+import { ISearchBar } from '../../types';
+import { getItems } from '../../api/SearchBar';
 
-export function SearchBar(){
+export function SearchBar({setData} : ISearchBar){
     const [searchText, setSearchText] = useState("");
 
     const handleOnChange = (e: any) => {
@@ -14,8 +16,7 @@ export function SearchBar(){
     };
 
     const handleOnClick = () => {
-        //call api
-        console.log("text", searchText)
+        getItems(searchText, setData);
     }
 
     return (

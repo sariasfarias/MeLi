@@ -2,8 +2,10 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect'; 
 import { Header } from './Header';
 
+const setData = jest.fn();
+
 test('renders Header component with authentication', () => {
-  render(<Header isAuth={true} />);
+  render(<Header isAuth={true} setData={setData} />);
   const logoElement = screen.getByAltText('MeLi logo');
   expect(logoElement).toBeInTheDocument();
   const searchBarElement = screen.getByTestId('search-bar');
@@ -11,7 +13,7 @@ test('renders Header component with authentication', () => {
 });
 
 test('renders Header component without authentication', () => {
-  render(<Header isAuth={false} />);
+  render(<Header isAuth={false} setData={setData} />);
   const logoElement = screen.getByAltText('MeLi logo');
   expect(logoElement).toBeInTheDocument();
   const searchBarElement = screen.queryByTestId('search-bar');
