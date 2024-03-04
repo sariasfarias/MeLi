@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { SearchBar } from './SearchBar';
 
+
 describe('SearchBar', () => {
   it('renders the component', () => {
     render(
@@ -12,12 +13,5 @@ describe('SearchBar', () => {
 
     expect(inputElement).toBeInTheDocument();
     expect(buttonElement).toBeInTheDocument();
-  });
-
-  it('should call api', () => {
-    render(
-      <SearchBar/>
-    );
-    //cal api test
   });
 });

@@ -20,7 +20,7 @@ export const LogIn = () => {
                 email={""} 
                 password={""}
             />
-            <a href={"/sign-in"}>No tienes una cuenta? Registrate</a>
+            <a href={"/sing-in"}>No tienes una cuenta? Registrate</a>
             {error ? <h1>Oops! Intenta otra vez </h1> : null}
         </div>
     );

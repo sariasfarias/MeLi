@@ -3,7 +3,7 @@ import { getAuthorizationHeader, getItemsURL } from "./constants";
 
 export const getItems = async (queryParam: String, setData: Function) : Promise<void> => {
     try {
-        const {data} = await axios.get(
+        const response = await axios.get(
             getItemsURL, 
             {
                 params: { q: queryParam },
@@ -15,10 +15,7 @@ export const getItems = async (queryParam: String, setData: Function) : Promise<
             },
         );
 
-        const json = await data.json();
-        setData(data.ok ? json : []);
-
-        console.log("--", setData)
+        setData(response.statusText === "OK" ? response.data : []);
 
     } catch (error) {
         setData([]); 

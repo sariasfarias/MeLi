@@ -25,7 +25,7 @@ describe('BasicForm ', () => {
         const lastNameInput = screen.getByTestId('form-lastname');
         const emailInput = screen.getByTestId('form-email');
         const passwordInput = screen.getByTestId('form-password');
-        const submitButton = screen.getByText('Guardar');
+        const submitButton = screen.getByText('Enviar');
       
         expect(nameInput).toBeInTheDocument();
         expect(lastNameInput).toBeInTheDocument();
@@ -50,7 +50,7 @@ describe('BasicForm ', () => {
         const lastNameInput = screen.getByTestId('form-lastname');
         const emailInput = screen.getByTestId('form-email');
         const passwordInput = screen.getByTestId('form-password');
-        const submitButton = screen.getByText('Guardar');
+        const submitButton = screen.getByText('Enviar');
       
         fireEvent.change(nameInput, { target: { value: 'Marcos' } });
         fireEvent.change(lastNameInput, { target: { value: 'Garcia' } });
@@ -82,7 +82,7 @@ describe('BasicForm ', () => {
         const lastNameInput = screen.queryByTestId('form-lastname');
         const emailInput = screen.getByTestId('form-email');
         const passwordInput = screen.getByTestId('form-password');
-        const submitButton = screen.getByText('Guardar');
+        const submitButton = screen.getByText('Enviar');
       
         expect(nameInput).toBeNull();
         expect(lastNameInput).toBeNull();
@@ -104,7 +104,7 @@ describe('BasicForm ', () => {
       
         const emailInput = screen.getByTestId('form-email');
         const passwordInput = screen.getByTestId('form-password');
-        const submitButton = screen.getByText('Guardar');
+        const submitButton = screen.getByText('Enviar');
       
         fireEvent.change(emailInput, { target: { value: 'marcos.garcia@example.com' } });
         fireEvent.change(passwordInput, { target: { value: 'qwerty123' } });

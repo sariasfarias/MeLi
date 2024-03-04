@@ -35,11 +35,11 @@ export interface IPrice {
 }
 export interface IItem {
     id: String;
-    title: String;
+    title: string;
     price: IPrice;
-    picture: String;
+    picture: string;
     condition: String;
-    freeShipping: boolean;
+    free_shipping: boolean;
 }
 
 export interface ISearchBarResponse {
@@ -49,4 +49,16 @@ export interface ISearchBarResponse {
     };
     categories : String[];
     items: IItem[];
+}
+
+export interface IItemCard {
+    title: string;
+    price: IPrice;
+    picture: string;
+    condition: String;
+    freeShipping: boolean;
+}
+
+export interface IItemCardList{
+    itemCardList: IItemCard[];
 }

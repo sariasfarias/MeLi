@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import './SearchBar.scss';
+import { useSearchParams } from 'react-router-dom';
 
 export function SearchBar(){
-    const [searchText, setSearchText] = useState("");
+    const [searchParams] = useSearchParams();
+    const queryParam = searchParams.get("search")?.toString() || '';
+    const [searchText, setSearchText] = useState(queryParam);
 
     const handleOnChange = (e: any) => {
         setSearchText(e.target.value);
@@ -14,8 +17,7 @@ export function SearchBar(){
     };
 
     const handleOnClick = () => {
-        //call api
-        console.log("text", searchText)
+        window.location.href = `/items?search=${searchText}`;
     }
 
     return (
