@@ -5,7 +5,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { SignIn } from '../SignIn/SignIn';
 import { LogIn } from '../LogIn/LogIn';
 import { Home } from '../Home/Home';
-import { IItemCard, ISearchBarResponse } from '../../types';
 import { ItemCardList } from '../ItemCardList/ItemCardList';
 
 export function MainContainer () {

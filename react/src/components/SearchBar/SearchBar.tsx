@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import './SearchBar.scss';
-import { ISearchBar } from '../../types';
-import { getItems } from '../../api/SearchBar';
 
 export function SearchBar(){
     const [searchText, setSearchText] = useState("");

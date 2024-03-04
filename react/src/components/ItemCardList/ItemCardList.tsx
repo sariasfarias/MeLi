@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { IItem, IItemCard, ISearchBarResponse } from "../../types";
+import { IItem, ISearchBarResponse } from "../../types";
 import { ItemCard } from "../ItemCard/ItemCard";
 import { getItems } from "../../api/SearchBar";
 import { useSearchParams } from "react-router-dom";
