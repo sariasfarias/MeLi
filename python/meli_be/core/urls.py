@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from users.views import RegisterUserView, LoginUserView
-from app.views import get_items_information
+from app.views import get_items_information, get_item_information
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,4 +28,5 @@ urlpatterns = [
     path('register/', RegisterUserView.as_view(), name='register'),
     path('login/', LoginUserView.as_view(), name='login'),
     path('api/items', get_items_information, name='items'),
+    path('api/items/<item_id>', get_item_information, name='item'),
 ]
