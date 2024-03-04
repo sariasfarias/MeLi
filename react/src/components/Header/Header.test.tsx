@@ -5,7 +5,7 @@ import { Header } from './Header';
 const setData = jest.fn();
 
 test('renders Header component with authentication', () => {
-  render(<Header isAuth={true} setData={setData} />);
+  render(<Header isAuth={true}/>);
   const logoElement = screen.getByAltText('MeLi logo');
   expect(logoElement).toBeInTheDocument();
   const searchBarElement = screen.getByTestId('search-bar');
@@ -13,7 +13,7 @@ test('renders Header component with authentication', () => {
 });
 
 test('renders Header component without authentication', () => {
-  render(<Header isAuth={false} setData={setData} />);
+  render(<Header isAuth={false} />);
   const logoElement = screen.getByAltText('MeLi logo');
   expect(logoElement).toBeInTheDocument();
   const searchBarElement = screen.queryByTestId('search-bar');

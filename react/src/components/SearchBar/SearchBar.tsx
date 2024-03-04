@@ -3,7 +3,7 @@ import './SearchBar.scss';
 import { ISearchBar } from '../../types';
 import { getItems } from '../../api/SearchBar';
 
-export function SearchBar({setData} : ISearchBar){
+export function SearchBar(){
     const [searchText, setSearchText] = useState("");
 
     const handleOnChange = (e: any) => {
@@ -16,7 +16,7 @@ export function SearchBar({setData} : ISearchBar){
     };
 
     const handleOnClick = () => {
-        getItems(searchText, setData);
+        window.location.href = `/items?search=${searchText}`;
     }
 
     return (

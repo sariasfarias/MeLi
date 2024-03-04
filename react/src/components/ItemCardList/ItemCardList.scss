@@ -1,0 +1,13 @@
+@import '../../styles/constants.scss';
+
+.item-card-list{
+    display: inline-block;
+    width: 90%;
+    
+    &__categories{
+        font-size: 14px;
+        text-align: left;
+        padding: $padding-1 0px $padding-1 0px;
+        color: $grey-dark;
+    }
+}

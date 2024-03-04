@@ -3,7 +3,7 @@
 .item-card{
     padding: $padding-1 0px $padding-1 0px;
     background-color: white;
-    width: 90%;
+    width: -webkit-fill-available;
 
     &__box{
         display: flex;
