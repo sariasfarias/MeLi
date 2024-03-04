@@ -1,6 +1,6 @@
 import axios from "axios";
 import { IForm, ILogIn } from "../types";
-import { LogInURL, RegisterURL } from "../constants";
+import { LogInURL, RegisterURL } from "./constants";
 
 
 const setCredentials = (access : string, refresh: string) => {
