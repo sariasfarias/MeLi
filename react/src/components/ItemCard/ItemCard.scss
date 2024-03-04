@@ -34,8 +34,25 @@
     }
 
     &__free-shipping{
-        align-self: center;
-        text-align: right;
+        &_desktop{
+            align-self: center;
+            display: none;
+            @media (min-width: 680px) {
+                display: flex;
+                text-align: right;
+            }
+        }
+        &_mobile{
+            align-self: center;
+            display: flex;
+            color: $blue;
+            @media (min-width: 680px) {
+                display: none;
+                text-align: right;
+            }
+        }
+        
+        
     }
 }
 

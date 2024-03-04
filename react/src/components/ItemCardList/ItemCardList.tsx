@@ -20,9 +20,9 @@ export function ItemCardList(){
 
     return (
         <div className="item-card-list">
-            <div className="item-card-list__categories"> 
+            {selectCategory && <div className="item-card-list__categories"> 
                 {categories + "  >  "}<strong>{selectCategory}</strong>
-            </div>
+            </div>}
             {
                 items.map((item:IItem, index) => 
 

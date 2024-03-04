@@ -14,9 +14,12 @@ export function ItemCard(props : IItemCard){
         <div className='item-card__information'>
           <div className='item-card__price'> {getPrice(props.price)} </div>
           <div className='item-card__title'> {props.title} </div>
+          {props.freeShipping &&
+            <div className='item-card__free-shipping_mobile'> Envío gratis </div>
+          }
         </div>
         {props.freeShipping &&
-          <div className='item-card__free-shipping'> Envío gratis </div>
+          <div className='item-card__free-shipping_desktop'> Envío gratis </div>
         }
       </div>
       <hr/>
