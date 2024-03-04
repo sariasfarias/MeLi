@@ -1,0 +1,46 @@
+@import '../../styles/constants.scss';
+
+.item-card{
+    padding: $padding-1 0px $padding-1 0px;
+    background-color: white;
+    width: 90%;
+
+    &__box{
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__information{
+        align-self: center;
+        text-align: left;
+        width: 80%;
+    }
+    
+    &__picture{
+        object-fit: contain;
+        height: 180px;
+        width: 180px;
+        border-radius: 4px;
+        padding: 0px $padding-1  0px $padding-1;
+    }
+
+    &__price{
+        font-size: 24px;
+        padding-bottom: $padding-2;
+    }
+
+    &__title{
+        font-size: 18px;
+    }
+
+    &__free-shipping{
+        align-self: center;
+        text-align: right;
+    }
+}
+
+hr {
+    width: 95%;
+    background-color: $grey-light;
+    border-color: transparent;
+}
