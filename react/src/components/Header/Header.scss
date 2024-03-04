@@ -1,13 +1,17 @@
 @import '../../styles/constants.scss';
 
 .header{
-    display: flex;
-    align-items: center;
     background-color: $yellow;
-    padding:   5px $padding-1;
+    padding:   5px 0px;
 
     @media (min-width: 680px) {
-        padding:  $padding-1 $padding-2;
+        padding:  $padding-1 0px;
+    }
+
+    &__box{
+        align-items: center;
+        display: inline-flex;
+        width: 90%;
     }
 
     &_logo{

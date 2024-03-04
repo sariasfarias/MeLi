@@ -15,14 +15,15 @@ export function ItemCardList(){
     }, [searchParams]);
 
     const items = data?.items || [] ;
-    const selectCategory = data?.categories.pop();
-    const categories = data?.categories.join("  >  ");
+    const categories = data?.categories || [];
 
     return (
-        <div className="item-card-list">
-            {selectCategory && <div className="item-card-list__categories"> 
-                {categories + "  >  "}<strong>{selectCategory}</strong>
-            </div>}
+        <div className="item-card-list"> 
+            <div className="item-card-list__categories"> 
+                {categories.map((category, index) => {
+                    return index === categories.length-1 ? <strong>{category}</strong> : <>{category + "   >   "}</>
+                })}
+            </div>
             {
                 items.map((item:IItem, index) => 
 

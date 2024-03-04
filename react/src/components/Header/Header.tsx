@@ -8,10 +8,12 @@ export function Header( {isAuth} : IHeader ){
     
     return (
         <div className='header'>
-            <div className='header_logo'>
-                <img src={meLiLogo} height={25} alt="MeLi logo" />
+            <div className='header__box'>
+                <div className='header_logo'>
+                    <img src={meLiLogo} height={25} alt="MeLi logo" />
+                </div>
+                {isAuth ? <SearchBar/> : null}
             </div>
-            {isAuth ? <SearchBar/> : null}
         </div>
     );
 }
