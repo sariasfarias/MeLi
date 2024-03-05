@@ -31,7 +31,7 @@ def get_items_information_from_endpoint(request):
 @permission_classes([IsAuthenticated])
 @api_view(['GET'])
 def get_item_information(request, item_id):
-    item_response_json, description_response_json = get_item_information_from_endpoint(request, item_id)
+    item_response_json, description_response_json = get_item_information_from_endpoint(item_id)
     item_response = get_processed_item_information(item_response_json, description_response_json)
 
     item_response["author"] = {
