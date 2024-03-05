@@ -52,6 +52,7 @@ export interface ISearchBarResponse {
 }
 
 export interface IItemCard {
+    id: String;
     title: string;
     price: IPrice;
     picture: string;
@@ -60,5 +61,25 @@ export interface IItemCard {
 }
 
 export interface IItemCardList{
-    itemCardList: IItemCard[];
+    setCategories: Function;
 }
+
+export interface IItemDetail{
+    categories: String[];
+}
+
+export interface IItemDescription {
+    id: String;
+    title: string;
+    price: IPrice;
+    picture: string;
+    condition: String;
+    free_shipping: boolean;
+    sold_quantity: Number;
+    description: String;
+}
+
+export type CategoryContextType = {
+    categoryList: String[];
+    updateCategoryList: (categoryList?: String[]) => void;
+};

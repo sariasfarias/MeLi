@@ -6,9 +6,13 @@ export function ItemCard(props : IItemCard){
     const decimals = price.decimals ? "," + price.decimals : "";
     return "$ " + price.amount + decimals;
   }
+
+  const onClick = (id : String) => {
+    window.location.href = `/items/${id}`;
+  }
     
   return (
-    <div className='item-card'>
+    <div className='item-card' onClick={() => onClick(props.id)}>
       <div className='item-card__box'>
         <img className='item-card__picture' src={props.picture} alt={props.title} />
         <div className='item-card__information'>
