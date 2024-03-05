@@ -12,7 +12,7 @@ describe('ItemCard component', () => {
       free_shipping: true,
     };
 
-    render(<ItemCard freeShipping={false} {...item} />);
+    render(<ItemCard freeShipping={true} {...item} />);
 
     const pictureElement = screen.getByAltText('Sample Item');
     expect(pictureElement).toBeInTheDocument();
@@ -23,7 +23,8 @@ describe('ItemCard component', () => {
     const titleElement = screen.getByText('Sample Item');
     expect(titleElement).toBeInTheDocument();
 
-    const freeShippingElement = screen.getByText('Envío gratis');
-    expect(freeShippingElement).toBeInTheDocument();
+    const freeShippingElements = screen.getAllByText('Envío gratis');
+    expect(freeShippingElements[0]).toBeInTheDocument();
+    expect(freeShippingElements[1]).toBeInTheDocument();
   });
 });
