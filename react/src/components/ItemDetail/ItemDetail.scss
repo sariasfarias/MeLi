@@ -1,0 +1,73 @@
+@import '../../styles/constants.scss';
+@import '../ItemCardList/ItemCardList.scss';
+
+.item-detail{
+    display:inline-flex;
+    background-color: white;
+    flex-direction: column-reverse;
+    width: 90%;
+    @media (min-width: 680px) {
+        flex-direction: row;
+    } 
+    
+    &__box{
+        @media (min-width: 680px) {
+            width: fit-content;
+        } 
+    }
+    &__picture{
+        object-fit: contain;
+        border-radius: 4px;
+        height: 280px;
+        width: 280px;
+        @media (min-width: 680px) {
+            height: 680px;
+            width: 680px;
+        } 
+    }
+    &__information{
+        align-self: flex-start;
+        text-align: left;
+        margin-left: 10%;
+    }
+    &__data{
+        padding-top: $padding-2;
+        font-size: 14px;
+    }
+    &__title{
+        padding-top: $padding-1;
+        font-size: 24px;
+    }
+    &__price{
+        font-size: 46px;
+        padding: $padding-2 0px $padding-2 0px;
+    }
+    &__button{
+        color: white;
+        background-color: $blue;
+        width: -webkit-fill-available;
+        border-color: transparent;
+        border-radius: 4px;
+        padding: 10px 0px 10px 0px;
+        margin-right: $padding-2;
+        font-size: 16px;
+    }
+    &__description-box{
+        padding-left: $padding-2;
+        padding-right: $padding-2;
+        @media (min-width: 680px) {
+            padding-right: 0px;
+        } 
+    }
+    &__description-title{
+        font-size: 28px;
+        text-align: left;
+    }
+    &__description-text{
+        font-size: 16px;
+        text-align: justify;
+        padding: $padding-2 0px $padding-2 0px;
+        color: $grey-dark;
+    }
+
+}
