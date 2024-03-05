@@ -48,7 +48,7 @@ def get_item(result):
         "id": result["id"],
         "title": result["title"],
         "price": get_price(result["currency_id"], result["price"]),
-        "picture": result["thumbnail"],
+        "picture": result["pictures"][0]["secure_url"],
         "condition": result["condition"],
         "free_shipping": result["shipping"]["free_shipping"],
         "sold_quantity": result["initial_quantity"],

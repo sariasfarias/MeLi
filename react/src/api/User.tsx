@@ -26,7 +26,7 @@ export const registerNewUser = async (user: IForm, setError: Function) : Promise
         );
 
         if(status === 201){
-            setCredentials(data.access, data.refresh);
+            window.location.href = "/log-in";
         } else {
             setError(true) 
         }
